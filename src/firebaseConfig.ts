@@ -3,16 +3,17 @@ import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDN_Hnt9L-yvQYKGItXInTcOIZoE-Edo-U",
-  authDomain: "reportesemanal-60ad3.firebaseapp.com",
-  projectId: "reportesemanal-60ad3",
-  storageBucket: "reportesemanal-60ad3.firebasestorage.app",
-  messagingSenderId: "503463462463",
-  appId: "1:503463462463:web:992f7825a5510879a55a8a",
-  measurementId: "G-MH017XJF7D",
+  apiKey: "AIzaSyDOULh1X0EYPzBpaIRMkbsgKg5p7LAGC8o",
+  authDomain: "weekreport-ed27.firebaseapp.com",
+  projectId: "weekreport-ed27",
+  storageBucket: "weekreport-ed27.firebasestorage.app", // 🔹 CORREGIDO
+  messagingSenderId: "412206882222",
+  appId: "1:412206882222:web:958cfd0d8eeaad11ca3c3f",
+  measurementId: "G-J65MWT6VKP",
 };
 
-// Evitar inicializar Firebase más de una vez
+
+// ✅ Evita inicializar Firebase más de una vez
 const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth(app);
