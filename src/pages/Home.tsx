@@ -34,6 +34,7 @@ const Home: React.FC = () => {
               </div>
             ))}
             <LineChartReport activities={activities} view={[500, 300]} />
+            
           </div>
         ) : (
           <div>No hay actividades para mostrar</div>

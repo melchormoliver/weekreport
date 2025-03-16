@@ -4,7 +4,7 @@ import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDOULh1X0EYPzBpaIRMkbsgKg5p7LAGC8o",
-  authDomain: "weekreport-ed27.firebaseapp.com",
+  authDomain: "weekreport-ed27.web.app",
   projectId: "weekreport-ed27",
   storageBucket: "weekreport-ed27.firebasestorage.app", // 🔹 CORREGIDO
   messagingSenderId: "412206882222",
