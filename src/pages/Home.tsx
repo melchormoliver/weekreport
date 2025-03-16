@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { IonContent, IonHeader, IonToolbar, IonTitle } from '@ionic/react';
 import Tasks from '../components/Tasks'; // Componente de tareas
 import Report from '../components/Report'; // Componente de reporte
-import  useActivityList  from '../services/useActivityList'; // Servicio que contiene las actividades
+import useActivityList from '../services/useActivityList'; // Servicio que contiene las actividades
 
 const Home: React.FC = () => {
   const { activities } = useActivityList(); // Obtenemos las actividades del servicio
@@ -23,13 +23,18 @@ const Home: React.FC = () => {
           <IonTitle>Productivity Report</IonTitle>
         </IonToolbar>
       </IonHeader>
-      
+
       <h2>Hoy es {currentDay}</h2>
       {isWeekend ? (
         activities && activities.length > 0 ? (
-          activities.map((activity, index) => (
-            <Report key={index} activity={activity} view={[500, 300]} total={activity.total} />
-          ))
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around' }}>
+            {activities.map((activity, index) => (
+              <div key={index} style={{ margin: '10px' }}>
+                <Report key={index} activity={activity} view={[500, 300]} total={activity.total} />
+                
+              </div>
+            ))}
+          </div>
         ) : (
           <div>No hay actividades para mostrar</div>
         )
