@@ -28,7 +28,12 @@ const useActivityList = () => {
     saveActivities(newActivities); // Guardar el cambio en localStorage
   };
 
-  return { activities, addActivity, updateActivityTotal }; // Ahora exportamos también `updateActivityTotal`
+  // Nueva función para limpiar todas las actividades
+  const clearActivities = () => {
+    saveActivities([]);
+  };
+
+  return { activities, addActivity, updateActivityTotal, clearActivities }; // Ahora exportamos también `clearActivities`
 };
 
 export default useActivityList;

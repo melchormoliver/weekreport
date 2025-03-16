@@ -14,7 +14,7 @@ import useActivityList from "../services/useActivityList"; // Asegúrate de impo
 
 const Welcome: React.FC = () => {
   const history = useHistory();
-  const { activities, addActivity } = useActivityList();
+  const { activities, addActivity, clearActivities } = useActivityList();
   const [activity, setActivity] = useState("");
 
   const goToHome = () => {
@@ -47,6 +47,7 @@ const Welcome: React.FC = () => {
           <IonItem key={index}>{act.name}</IonItem> // 🔹 Asegurar que se muestre correctamente
         ))}
       </IonList>
+      <IonButton onClick={clearActivities} color="danger">Limpiar Lista</IonButton>
       <IonButton onClick={goToHome}>Ir al Home</IonButton>
     </IonContent>
   );
