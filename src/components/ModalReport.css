@@ -1,0 +1,13 @@
+.report-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .report-card {
+    margin: 10px;
+    max-width: 100%;
+  }
+  

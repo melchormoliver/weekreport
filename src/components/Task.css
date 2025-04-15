@@ -1,0 +1,50 @@
+/* Estilos generales para la lista de tareas */
+.task-list {
+    padding: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* Cada item (IonItem) tiene transición suave al marcarse */
+  .task-item {
+    transition: all 0.3s ease;
+    background-color: var(--ion-background-color, #1e1e1e);
+    border-radius: 12px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Texto de la tarea */
+  .task-label {
+    font-size: 1.1rem;
+    color: var(--ion-text-color, #ffffff);
+    transition: color 0.3s ease;
+  }
+  
+  /* Tareas completadas */
+  .task-label.done {
+    text-decoration: line-through;
+    color: #cccccc;
+    opacity: 0.6;
+  }
+  
+  /* Checkbox alineado a la derecha */
+  .task-checkbox {
+    --checkbox-background-checked: #ff9800; /* naranja suave */
+    --checkbox-background: #333;
+    --checkmark-color: #fff;
+  }
+  
+  /* Dark mode compatibility */
+  @media (prefers-color-scheme: dark) {
+    .task-item {
+      background-color: #2c2c2c;
+    }
+    .task-label {
+      color: #ffffff;
+    }
+    .task-label.done {
+      color: #bbbbbb;
+    }
+  }
+  

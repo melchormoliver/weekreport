@@ -11,8 +11,9 @@ import {
 } from "@ionic/react";
 import { useHistory } from "react-router-dom";
 import useActivityList from "../services/useActivityList"; // Asegúrate de importar el hook correcto
-import LineChartReport from "../components/LineChartReport";
+
 import './Welcome.css';
+import ModalReport from "../components/ModalReport";
 const Welcome: React.FC = () => {
   const history = useHistory();
   const { activities, addActivity, clearActivities } = useActivityList();
@@ -21,9 +22,8 @@ const Welcome: React.FC = () => {
   const goToHome = () => {
     history.push("/home");
   };
-  const showReports = () => {
-    history.push("/home");
-  };
+
+  const [showModal, setShowModal] = useState(false);
   const handleAddActivity = () => {
     if (activity.trim() !== "") {
       addActivity(activity); // Agregamos la actividad
@@ -53,7 +53,12 @@ const Welcome: React.FC = () => {
       <IonList>
         <IonButton onClick={clearActivities} className="danger">Limpiar Lista</IonButton>
         <IonButton onClick={goToHome} className="neutral">Ir al Home</IonButton>
-        <IonButton onClick={showReports} className="neutral">Ir a los reportes</IonButton>
+        
+        <IonButton expand="block" onClick={() => setShowModal(true)}>
+        Ver Reportes
+      </IonButton>
+
+      <ModalReport isOpen={showModal} onClose={() => setShowModal(false)} />
       </IonList>    
     </IonContent>
   );

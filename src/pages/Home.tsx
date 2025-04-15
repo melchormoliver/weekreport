@@ -16,7 +16,7 @@ const Home: React.FC = () => {
     setCurrentDay(days[today]);
     setIsWeekend(today === 0 || today === 6); // true si es sábado o domingo
   }, []);
-
+  
   return (
     <IonContent>
       <IonHeader>

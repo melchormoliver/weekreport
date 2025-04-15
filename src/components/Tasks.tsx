@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { IonList, IonItem, IonLabel, IonCheckbox } from '@ionic/react';
 import useActivityList from "../services/useActivityList"; // Importamos el hook
-
+import './Task.css'
 const Tasks: React.FC = () => {
   const { activities, updateActivityTotal } = useActivityList(); // Usamos el hook para obtener actividades
   const [tasks, setTasks] = useState<any[]>([]); // Mantener el estado de las tareas
