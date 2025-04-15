@@ -1,0 +1,83 @@
+/* Contenedor principal del reporte */
+.report-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  /* Tarjeta de actividad */
+  .report-card {
+    background-color: var(--ion-background-color);
+    border: 1px solid var(--ion-color-step-150);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    padding: 1rem;
+    width: 100%;
+    max-width: 500px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .report-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  }
+  
+  /* Título del día */
+  .day-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--ion-text-color);
+    text-align: center;
+    margin: 1rem 0;
+  }
+  
+  /* Texto sin actividades */
+  .no-activities {
+    text-align: center;
+    color: var(--ion-color-medium);
+    margin-top: 2rem;
+    font-style: italic;
+  }
+  
+  /* Estilo para gráficos */
+  .chart-container {
+    background-color: var(--ion-background-color);
+    border: 1px solid var(--ion-color-step-150);
+    border-radius: 12px;
+    padding: 1rem;
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 600px) {
+    .report-card, .chart-container {
+      max-width: 100%;
+      padding: 0.75rem;
+    }
+  
+    .day-title {
+      font-size: 1.2rem;
+    }
+  }
+  
+  /* Colores personalizados para modo claro y oscuro */
+  :root {
+    --accent-color: #ff9500;
+  }
+  
+  html[color-scheme="dark"] {
+    --ion-background-color: #1c1c1e;
+    --ion-text-color: #ffffff;
+    --ion-color-step-150: #2c2c2e;
+  }
+  
+  html[color-scheme="light"] {
+    --ion-background-color: #ffffff;
+    --ion-text-color: #1c1c1e;
+    --ion-color-step-150: #d1d1d6;
+  }
+  

@@ -4,6 +4,7 @@ import Tasks from '../components/Tasks'; // Componente de tareas
 import Report from '../components/Report'; // Componente de reporte
 import useActivityList from '../services/useActivityList'; // Servicio que contiene las actividades
 import LineChartReport from '../components/LineChartReport';
+import './Home.css'
 const Home: React.FC = () => {
   const { activities } = useActivityList(); // Obtenemos las actividades del servicio
   const [isWeekend, setIsWeekend] = useState(false);
@@ -29,7 +30,7 @@ const Home: React.FC = () => {
         activities && activities.length > 0 ? (
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around' }}>
             {activities.map((activity, index) => (
-              <div key={index} style={{ margin: '10px' }}>
+              <div key={index} className="report-card">
                 <Report key={index} activity={activity} view={[500, 300]} total={activity.total} />
               </div>
             ))}

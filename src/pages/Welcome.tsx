@@ -11,7 +11,8 @@ import {
 } from "@ionic/react";
 import { useHistory } from "react-router-dom";
 import useActivityList from "../services/useActivityList"; // Asegúrate de importar el hook correcto
-
+import LineChartReport from "../components/LineChartReport";
+import './Welcome.css';
 const Welcome: React.FC = () => {
   const history = useHistory();
   const { activities, addActivity, clearActivities } = useActivityList();
@@ -20,7 +21,9 @@ const Welcome: React.FC = () => {
   const goToHome = () => {
     history.push("/home");
   };
-
+  const showReports = () => {
+    history.push("/home");
+  };
   const handleAddActivity = () => {
     if (activity.trim() !== "") {
       addActivity(activity); // Agregamos la actividad
@@ -41,14 +44,17 @@ const Welcome: React.FC = () => {
         placeholder="Agregar actividad"
         onIonChange={(e) => setActivity(e.detail.value!)}
       />
-      <IonButton onClick={handleAddActivity}>Agregar</IonButton>
+      <IonButton onClick={handleAddActivity} className="add">Agregar</IonButton>
       <IonList>
         {activities.map((act, index) => (
           <IonItem key={index}>{act.name}</IonItem> // 🔹 Asegurar que se muestre correctamente
         ))}
       </IonList>
-      <IonButton onClick={clearActivities} color="danger">Limpiar Lista</IonButton>
-      <IonButton onClick={goToHome}>Ir al Home</IonButton>
+      <IonList>
+        <IonButton onClick={clearActivities} className="danger">Limpiar Lista</IonButton>
+        <IonButton onClick={goToHome} className="neutral">Ir al Home</IonButton>
+        <IonButton onClick={showReports} className="neutral">Ir a los reportes</IonButton>
+      </IonList>    
     </IonContent>
   );
 };

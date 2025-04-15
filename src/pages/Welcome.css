@@ -1,0 +1,124 @@
+/* Contenedor principal */
+.welcome-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+    gap: 1rem;
+  }
+  
+  /* Título de bienvenida */
+  .welcome-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--ion-text-color);
+    margin-bottom: 1rem;
+  }
+  
+  /* Estilo para el input */
+  ion-input {
+    --background: var(--ion-background-color);
+    --color: var(--ion-text-color);
+    --placeholder-color: var(--ion-color-medium);
+    border: 1px solid var(--ion-color-step-150);
+    border-radius: 8px;
+    padding: 0.5rem;
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+  }
+  
+  /* Lista de actividades */
+  ion-list {
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid var(--ion-color-step-150);
+    border-radius: 12px;
+    background-color: var(--ion-background-color);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  }
+  
+  ion-item {
+    --background: transparent;
+    --color: var(--ion-text-color);
+    border-bottom: 1px solid var(--ion-color-step-150);
+  }
+  
+  ion-item:last-child {
+    border-bottom: none;
+  }
+  
+  /* Botones */
+  ion-button {
+    width: 100%;
+    max-width: 400px;
+    --border-radius: 10px;
+    font-weight: bold;
+  }
+  
+  ion-button[color="primary"] {
+    --background: var(--accent-color);
+    --color: #fff;
+  }
+  
+  ion-button[color="danger"] {
+    --background: #ff3b30;
+    --color: #fff;
+  }
+  
+  /* Responsive */
+  @media (max-width: 600px) {
+    .welcome-container {
+      padding: 1rem;
+      gap: 0.75rem;
+    }
+  
+    .welcome-title {
+      font-size: 1.4rem;
+    }
+  }
+  
+  /* Colores personalizados para dark y light mode */
+  :root {
+    --accent-color: #ff9500;
+  }
+  
+  html[color-scheme="dark"] {
+    --ion-background-color: #1c1c1e;
+    --ion-text-color: #ffffff;
+    --ion-color-step-150: #2c2c2e;
+  }
+  
+  html[color-scheme="light"] {
+    --ion-background-color: #ffffff;
+    --ion-text-color: #1c1c1e;
+    --ion-color-step-150: #d1d1d6;
+  }
+  ion-button {
+    width: 100%;
+    max-width: 400px;
+    --border-radius: 10px;
+    font-weight: bold;
+    transition: background 0.2s ease;
+  }
+  
+  ion-button.add {
+    --background: #f4a261;
+    --color: white;
+  }
+  
+  
+  ion-button.danger {
+    --background: #3a3a3c;
+    --color: white;
+  }
+  
+  ion-button.neutral {
+    --background: #8e8e93;
+    --color: white;
+  }
+  
+  ion-button.neutral:hover {
+    --background: #ff9500;
+  }
+  
